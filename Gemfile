@@ -39,3 +39,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem "nifty-generators", :group => :development
+
+gem "bcrypt-ruby", require: "bcrypt"
+
+gem "mocha", group: :test
