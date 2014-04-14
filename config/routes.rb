@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  match 'users/edit' => 'users#edit', :as => :edit_current_users
-  match 'signup' => 'users#new', :as => :signup
-  match 'logout' => 'sessions#destroy', :as => :logout
-  match 'login' => 'sessions#new', :as => :login
+  resources :tasks
+
+  resources :iterations
+
+  get 'users/edit' => 'users#edit', :as => :edit_current_users
+  get 'signup' => 'users#new', :as => :signup
+  get 'logout' => 'sessions#destroy', :as => :logout
+  get 'login' => 'sessions#new', :as => :login
   resources :sessions
   resources :users
   resources :projects
@@ -11,7 +15,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'project#index'
+  root 'projects#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
